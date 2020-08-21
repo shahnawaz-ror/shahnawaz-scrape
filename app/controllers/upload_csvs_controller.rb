@@ -7,7 +7,6 @@ class UploadCsvsController < ApplicationController
   # GET /upload_csvs.json
   def index
     @upload_csvs = UploadCsv.all
-    generated_csv_updates(UploadCsv.last)
   end
 
   # GET /upload_csvs/1

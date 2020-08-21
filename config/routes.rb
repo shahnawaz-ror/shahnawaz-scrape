@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :students
   resources :upload_csvs
   # get 'upload_csv/new'
   get 'home/index'
