@@ -30,7 +30,7 @@ class UploadCsvsController < ApplicationController
     respond_to do |format|
       if @upload_csv.save
         GenrateCsvJob.perform_later(@upload_csv)
-        format.html { redirect_to @upload_csv, notice: 'Upload csv we will let you know once that is processed and wmail will be deliver.' }
+        format.html { redirect_to @upload_csv, notice: 'Uploaded csv, we will let you know once that is processed and email will be deliver.' }
         format.json { render :show, status: :created, location: @upload_csv }
       else
         format.html { render :new }
