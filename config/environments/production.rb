@@ -88,7 +88,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://fathomless-castle-93342.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: 'roneysmith34@gmail.com',
