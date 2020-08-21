@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShahnawazTest</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>  
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">   
+          <%= link_to('Home', root_path, class: "nav-link") %>
+        </li>
+        <li class="nav-item">   
+          <%= link_to('Upload CSV', new_upload_csv_path, class: "nav-link") %>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <script type="text/javascript">
+    <%  if notice.present?%>
+    var message = "<%= notice %>";
+    sweetAlert(message);
+    <% end %>
+    <%  if alert.present?%>
+    var message = "<%= alert %>";
+    sweetAlert(message);
+    
+    <% end %>
+  </script>
+  
+  <%= yield %>
+</body>
+</html>

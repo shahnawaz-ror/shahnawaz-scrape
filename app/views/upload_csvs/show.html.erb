@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @upload_csv.users %>
+</p>
+
+<p>
+  <strong>Csv file:</strong>
+  <%= @upload_csv.csv_file %>
+</p>
+
+<p>
+  <strong>Generated csv:</strong>
+  <%= @upload_csv.generated_csv %>
+</p>
+
+<%= link_to 'Edit', edit_upload_csv_path(@upload_csv) %> |
+<%= link_to 'Back', upload_csvs_path %>
