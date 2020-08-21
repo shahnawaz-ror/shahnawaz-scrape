@@ -6,7 +6,7 @@ class UploadCsvsController < ApplicationController
   # GET /upload_csvs
   # GET /upload_csvs.json
   def index
-    @upload_csvs = UploadCsv.all
+    @upload_csvs = UploadCsv.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /upload_csvs/1
