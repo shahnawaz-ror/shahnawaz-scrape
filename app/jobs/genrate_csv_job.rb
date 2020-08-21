@@ -18,12 +18,10 @@ class GenrateCsvJob < ApplicationJob
       end
     end
     UserMailer.send_csv(upload_csv).deliver_now!
-    end
+  end
   def processed_csv(upload_csv)
     @new_array = []
     CSV.foreach(upload_csv.csv_file.path,headers: true, header_converters: :symbol) do |row|
-      puts row.to_h[:refferal_link]
-
       row_map = row.to_h
       page = HTTParty.get(row_map[:refferal_link])
       page_parse = Nokogiri::HTML(page)
