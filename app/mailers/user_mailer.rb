@@ -8,7 +8,6 @@ class UserMailer < ApplicationMailer
   def send_csv(upload_csv)
     @greeting = "Hi"
     attachments['parsed.csv'] = File.read(upload_csv.generated_csv)
-
-    mail to: JSON.parse(upload_csv.users)
+    mail(to: JSON.parse(upload_csv.users), subject: 'Csv is parsed succesfully.')
   end
 end
