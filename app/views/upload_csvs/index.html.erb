@@ -1,36 +1,40 @@
 <div class="container">
 
+  <div class="row">
+    <div class="col-sm-10 col-lg-10 col-md-10">
 
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-<h1>Upload Csvs</h1>
+    <h1>Upload Csvs</h1>
 
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Users</th>
-      <th>Csv file</th>
-      <th>Generated csv</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Users</th>
+          <th>Csv file</th>
+          <th>Generated csv</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @upload_csvs.each do |upload_csv| %>
-      <tr>
-        <td><%= upload_csv.users %></td>
-        <td><%= upload_csv.csv_file %></td>
-        <td><%= upload_csv.generated_csv %></td>
-        <td><%= link_to 'Show', upload_csv %></td>
-        <td><%= link_to 'Edit', edit_upload_csv_path(upload_csv) %></td>
-        <td><%= link_to 'Destroy', upload_csv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  <%= pagy_bootstrap_nav(@pagy).html_safe %>
+      <tbody>
+        <% @upload_csvs.each do |upload_csv| %>
+        <tr>
+          <td><%= upload_csv.users %></td>
+          <td><%= upload_csv.csv_file %></td>
+          <td><%= upload_csv.generated_csv %></td>
+          <td><%= link_to 'Show', upload_csv %></td>
+          <td><%= link_to 'Edit', edit_upload_csv_path(upload_csv) %></td>
+          <td><%= link_to 'Destroy', upload_csv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= pagy_bootstrap_nav(@pagy).html_safe %>
 
-<br>
+    <br>
 
-<%= link_to 'New Upload Csv', new_upload_csv_path %>
+    <%= link_to 'New Upload Csv', new_upload_csv_path %>
+    </div>
+  </div>
 </div>

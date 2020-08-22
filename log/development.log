@@ -12797,3 +12797,26 @@ Processing by UploadCsvsController#index as HTML
 Completed 200 OK in 195ms (Views: 180.8ms | ActiveRecord: 7.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-08-22 12:37:10 +0530
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (55.9ms)
+Started GET "/cable" for ::1 at 2020-08-22 12:37:11 +0530
+Completed 200 OK in 2065ms (Views: 2037.4ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:37:14 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/cable" for 127.0.0.1 at 2020-08-22 12:37:15 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2020-08-22 12:37:15 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
