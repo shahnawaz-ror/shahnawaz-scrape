@@ -12599,3 +12599,201 @@ Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:17:22 +0530
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 ActivityChannel is transmitting the subscription confirmation
 ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 12:23:55 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (1.2ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (82.9ms)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___1665275850139763657_46946654385560 at /home/akash/Ajay/ShahnawazTestSO/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 11919ms (Views: 11824.4ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 12:24:08 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:24:08 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs/new" for ::1 at 2020-08-22 12:24:10 +0530
+Processing by UploadCsvsController#new as HTML
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (1022.4ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (1035.9ms)
+Completed 200 OK in 1282ms (Views: 1218.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_csvs" for ::1 at 2020-08-22 12:24:35 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eOmZ1ArTZjCyDqqTCtlPfJqcvptMvnpNNtIxfs4R9skfSwV9JpG0HibyeRhqn4+tYmur2ie53UYVP0m9s8hAfg==", "upload_csv"=>{"csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fad0b4d2fc8 @tempfile=#<Tempfile:/tmp/RackMultipart20200822-31624-1xzmw45.zip>, @original_filename="laundi.zip", @content_type="application/zip", @headers="Content-Disposition: form-data; name=\"upload_csv[csv_file]\"; filename=\"laundi.zip\"\r\nContent-Type: application/zip\r\n">}, "commit"=>"Create Upload csv"}
+  [1m[35m (180.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (18.4ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 7315ms (Views: 2135.6ms | ActiveRecord: 182.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:24:43 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:24:44 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:24:44 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started POST "/upload_csvs" for ::1 at 2020-08-22 12:24:53 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MCxYTz2orQQR/WDfT3SLHH4zIN5v4fGa0g64ldX5U/E0epgH+ka2lzOZ86ruwDEvgU8IKpdQyDHL6SpyrXBIdA==", "commit"=>"Create Upload csv"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: upload_csv):
+  
+app/controllers/upload_csvs_controller.rb:72:in `upload_csv_params'
+app/controllers/upload_csvs_controller.rb:27:in `create'
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:24:57 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/upload_csvs" for ::1 at 2020-08-22 12:25:25 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (2.0ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 258ms (Views: 140.3ms | ActiveRecord: 42.6ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 12:25:27 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:25:27 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs/new" for ::1 at 2020-08-22 12:25:30 +0530
+Processing by UploadCsvsController#new as HTML
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (3.2ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 96ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_csvs" for ::1 at 2020-08-22 12:25:32 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L8jdb/Fs0EPKs8wvEaEAP98JpzCezxk3UYnDuuuh2stIakHG3S4CbV5PH6Rx58DuJ/6ycfXIvjxyZLt5lnhsfA==", "commit"=>"Create Upload csv"}
+Completed 400 Bad Request in 57134ms (ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:29 +0530
+ActivityChannel stopped streaming from activity_channel
+  
+ActionController::ParameterMissing (param is missing or the value is empty: upload_csv):
+  
+app/controllers/upload_csvs_controller.rb:73:in `upload_csv_params'
+app/controllers/upload_csvs_controller.rb:28:in `create'
+Started GET "/cable" for ::1 at 2020-08-22 12:26:29 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:30 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:30 +0530
+Started GET "/cable" for ::1 at 2020-08-22 12:26:36 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:36 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started POST "/upload_csvs" for ::1 at 2020-08-22 12:26:37 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"88G30xx5vHI/ZrUk13xWG+OP0HtoZ5byw1AqGJ/lXdf3l3eb25en4R0CJlF2yOwoHPP4j5DWr1nat7j/52xGUg==", "commit"=>"Create Upload csv"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (3.8ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 142ms (Views: 111.1ms | ActiveRecord: 9.4ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:37 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:26:37 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:26:37 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started POST "/upload_csvs" for ::1 at 2020-08-22 12:26:59 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"93CsxSRNSktc+w8AlmQF4afPi/FdaYbSetFTXrUP5L7zJmyN46NR2H6fnHU30L/SWLOjBaXYv3ljNsG5zYb/Ow==", "upload_csv"=>{"users"=>["sdaasdasd@sample.com"], "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fad0a4c3470 @tempfile=#<Tempfile:/tmp/RackMultipart20200822-31624-1v48peh.csv>, @original_filename="product_data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"upload_csv[csv_file]\"; filename=\"product_data.csv\"\r\nContent-Type: text/csv\r\n">}, "commit"=>"Create Upload csv"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[36mUploadCsv Create (28.7ms)[0m  [1m[32mINSERT INTO "upload_csvs" ("users", "csv_file", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users", "[\"sdaasdasd@sample.com\"]"], ["csv_file", "product_data.csv"], ["created_at", "2020-08-22 06:56:59.456420"], ["updated_at", "2020-08-22 06:56:59.456420"]]
+  ↳ app/controllers/upload_csvs_controller.rb:29
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: df37b427-0c9f-4c0e-8c48-fca1c8cf7f47) to Async(default) with arguments: #<GlobalID:0x00007fad0a545da8 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/30>>
+  [1m[36mUploadCsv Load (1.7ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (162.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+Redirected to http://localhost:3000/upload_csvs/30
+Completed 302 Found in 598ms (ActiveRecord: 192.4ms)
+
+
+Started GET "/upload_csvs/30" for ::1 at 2020-08-22 12:26:59 +0530
+Processing by UploadCsvsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mUploadCsv Load (2.1ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:67
+  Rendering upload_csvs/show.html.erb within layouts/application
+  Rendered upload_csvs/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 183ms (Views: 145.4ms | ActiveRecord: 3.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:27:00 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:27:00 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:27:00 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs" for ::1 at 2020-08-22 12:27:16 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (2.2ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 136ms (Views: 125.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/upload_csvs?page=3" for ::1 at 2020-08-22 12:27:20 +0530
+Processing by UploadCsvsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (5.9ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 195ms (Views: 180.8ms | ActiveRecord: 7.2ms)
+
+
