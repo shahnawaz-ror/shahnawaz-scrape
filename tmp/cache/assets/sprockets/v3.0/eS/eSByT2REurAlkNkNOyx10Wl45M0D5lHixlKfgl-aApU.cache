@@ -1,0 +1,18 @@
+I"¥(function() {
+  App.activity = App.cable.subscriptions.create("ActivityChannel", {
+    connected: function() {
+      sweetAlert('wow');
+      return console.log('hhhhhh');
+    },
+    disconnected: function() {
+      return console.log('dis connect');
+    },
+    received: function(event) {
+      console.log('connected');
+      debugger;
+      return $('#events').prepend("" + event.message);
+    }
+  });
+
+}).call(this);
+:ET

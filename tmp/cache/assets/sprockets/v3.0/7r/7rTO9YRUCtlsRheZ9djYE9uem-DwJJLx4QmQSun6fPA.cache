@@ -1,0 +1,16 @@
+I"U(function() {
+  App.activity = App.cable.subscriptions.create("ActivityChannel", {
+    connected: function() {
+      return console.log('hhhhhh');
+    },
+    disconnected: function() {
+      return console.log('dis connect');
+    },
+    received: function(event) {
+      debugger;
+      return sweetAlert(event);
+    }
+  });
+
+}).call(this);
+:ET

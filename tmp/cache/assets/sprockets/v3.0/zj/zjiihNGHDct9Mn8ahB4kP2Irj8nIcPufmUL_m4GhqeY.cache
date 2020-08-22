@@ -1,0 +1,11 @@
+I"(function() {
+  App.activity = App.cable.subscriptions.create("ActivityChannel", {
+    connected: function() {},
+    disconnected: function() {},
+    received: function(event) {
+      return $('#events').prepend("" + event.message);
+    }
+  });
+
+}).call(this);
+:ET
