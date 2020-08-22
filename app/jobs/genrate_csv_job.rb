@@ -19,9 +19,9 @@ class GenrateCsvJob < ApplicationJob
     end
     if @new_array.present?
       UserMailer.send_csv(upload_csv).deliver_now!
-      EventBroadcastJob.set(wait: 5.seconds).perform_later "Your csv is sent to the below users #{upload_csv.users}"
+      EventBroadcastJob.set(wait: 8.seconds).perform_later "Your csv is sent to the below users #{upload_csv.users}"
     else
-      EventBroadcastJob.set(wait: 5.seconds).perform_later "Invalid csv please change attachment or try again."
+      EventBroadcastJob.set(wait: 8.seconds).perform_later "Invalid csv please change attachment or try again."
     end
   end
 
