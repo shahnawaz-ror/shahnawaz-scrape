@@ -27,7 +27,7 @@ class UploadCsvsController < ApplicationController
     @upload_csv = params[:upload_csv] ? UploadCsv.new(upload_csv_params) : UploadCsv.new
     respond_to do |format|
       if @upload_csv.save
-        format.html { redirect_to @upload_csv, notice: 'Uploaded csv, we will let you know once that is processed and email will be deliver.' }
+        format.html { redirect_to root_path, notice: 'Uploaded csv, we will let you know once that is processed and email will be deliver.' }
         format.json { render :show, status: :created, location: @upload_csv }
       else
         format.html { render :new }
