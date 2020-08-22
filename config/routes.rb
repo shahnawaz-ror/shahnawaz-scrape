@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # get 'upload_csv/new'
   get 'home/index'
   # devise_for :users
-  root 'home#index'
+  root 'upload_csvs#index'
 end

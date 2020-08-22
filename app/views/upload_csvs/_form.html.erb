@@ -12,7 +12,7 @@
         </ul>
       </div>
     <% end %>
-    <select class="js-searchable" name="upload_csv[users][]" multiple="multiple" style="width: 200px;">
+    <select  class="js-searchable" name="upload_csv[users][]" multiple="multiple" style="width: 270px;">
     </select>
     <%= form.file_field :csv_file %>
 
@@ -26,7 +26,23 @@
   $(document).ready(function(){
     $(".js-searchable").select2({
       tags: true,
-      tokenSeparators: [',']
+      placeholder: "Add multiple email Address only email allowed.",
+      tokenSeparators: [','],
+      createTag: function(term, data) {
+          var value = term.term;
+          if(validateEmail(value)) {
+              return {
+                id: value,
+                text: value
+              };
+          }else
+          return null;            
+      }
     })
+
   })
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 </script>

@@ -28,7 +28,7 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @upload_csvs, renderer: BootstrapPagination::Rails %>
+  <%= pagy_bootstrap_nav(@pagy).html_safe %>
 
 <br>
 
