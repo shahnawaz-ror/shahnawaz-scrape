@@ -12520,3 +12520,82 @@ Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 11:53:36 +0530
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 ActivityChannel is transmitting the subscription confirmation
 ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 12:09:47 +0530
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (61.6ms)
+Completed 200 OK in 1116ms (Views: 1060.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 12:09:49 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:09:49 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 12:10:08 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.7ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:11:51 +0530
+ActivityChannel stopped streaming from activity_channel
+  Rendered upload_csvs/index.html.erb within layouts/application (406454.0ms)
+Started GET "/cable" for ::1 at 2020-08-22 12:16:55 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:16:55 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Completed 200 OK in 407021ms (Views: 407017.2ms | ActiveRecord: 1.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:16:55 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:16:56 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:16:56 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 12:17:01 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (1.9ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 173ms (Views: 148.7ms | ActiveRecord: 9.8ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:17:01 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:17:01 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:17:01 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 12:17:22 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:19
+  Rendered upload_csvs/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 147ms (Views: 142.1ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 12:17:22 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 12:17:22 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 12:17:22 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel

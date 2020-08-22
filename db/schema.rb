@@ -10,24 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_162617) do
-
+ActiveRecord::Schema.define(version: 20_200_821_162_617) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.text "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'students', force: :cascade do |t|
+    t.string 'name'
+    t.text 'url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "upload_csvs", force: :cascade do |t|
-    t.text "users"
-    t.string "csv_file"
-    t.string "generated_csv"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'upload_csvs', force: :cascade do |t|
+    t.text 'users'
+    t.string 'csv_file'
+    t.string 'generated_csv'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

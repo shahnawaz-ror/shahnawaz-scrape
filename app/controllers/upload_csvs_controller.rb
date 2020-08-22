@@ -1,5 +1,5 @@
 class UploadCsvsController < ApplicationController
-  before_action :set_upload_csv, only: [:show, :edit, :update, :destroy]
+  before_action :set_upload_csv, only: %i[show edit update destroy]
   require 'csv'
   require 'httparty'
   require 'nokogiri'
@@ -11,8 +11,7 @@ class UploadCsvsController < ApplicationController
 
   # GET /upload_csvs/1
   # GET /upload_csvs/1.json
-  def show
-  end
+  def show; end
 
   # GET /upload_csvs/new
   def new
@@ -20,8 +19,7 @@ class UploadCsvsController < ApplicationController
   end
 
   # GET /upload_csvs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /upload_csvs
   # POST /upload_csvs.json
@@ -62,14 +60,15 @@ class UploadCsvsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_upload_csv
-      @upload_csv = UploadCsv.find(params[:id])
-    end
+    private
 
-    # Only allow a list of trusted parameters through.
-    def upload_csv_params
-      params.require(:upload_csv).permit(:csv_file, :generated_csv, users: [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_upload_csv
+    @upload_csv = UploadCsv.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def upload_csv_params
+    params.require(:upload_csv).permit(:csv_file, :generated_csv, users: [])
+  end
   end
