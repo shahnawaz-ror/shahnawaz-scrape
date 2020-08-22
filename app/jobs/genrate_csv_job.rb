@@ -18,7 +18,7 @@ class GenrateCsvJob < ApplicationJob
       end
     end
     UserMailer.send_csv(upload_csv).deliver_now!
-    EventBroadcastJob.perform_later upload_csv
+    EventBroadcastJob.set(wait: 5.seconds).perform_later upload_csv
   end
   def processed_csv(upload_csv)
     @new_array = []
