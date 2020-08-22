@@ -8,4 +8,5 @@ App.activity = App.cable.subscriptions.create "ActivityChannel",
     # Called when the subscription has been terminated by the server
 
   received: (event) ->
+    console.log('recived')
     sweetAlert(event);
