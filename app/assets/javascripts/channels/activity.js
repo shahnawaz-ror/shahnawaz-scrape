@@ -2,7 +2,7 @@ App.conversation = App.cable.subscriptions.create("ActivityChannel", {
   connected: function() {},
   disconnected: function() {},
   received: function(data) {
-    swal("Congratulations new CSV parsed!!!", data["message"])
+    swal("CSV parsed status!!!", data["message"])
 
     // alert(data["message"]);
   },

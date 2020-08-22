@@ -9,7 +9,7 @@ class GenrateCsvJob < ApplicationJob
         csv << new_array
       end
       file = "#{Rails.root}/public/product_data.csv"
-      headers = ['referal link', 'home_link', 'count']
+      headers = ['referal_link', 'home_link', 'count']
       file = CSV.open(file, 'w', write_headers: true, headers: headers) do |writer|
         @new_array.each do |new_array|
           writer << new_array
@@ -17,8 +17,12 @@ class GenrateCsvJob < ApplicationJob
         upload_csv.update(generated_csv: file)
       end
     end
-    UserMailer.send_csv(upload_csv).deliver_now!
-    EventBroadcastJob.set(wait: 5.seconds).perform_later upload_csv
+    if @new_array.present?
+      UserMailer.send_csv(upload_csv).deliver_now!
+      EventBroadcastJob.set(wait: 5.seconds).perform_later "Your csv is sent to the below users #{upload_csv.users}"
+    else
+      EventBroadcastJob.set(wait: 5.seconds).perform_later "Invalid csv please change attachment or try again."
+    end
   end
 
   # Method to get the link count and stores in the array

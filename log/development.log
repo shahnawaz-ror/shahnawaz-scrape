@@ -12820,3 +12820,499 @@ Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2020-08-22 12:37:15 +0530
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
 ActivityChannel is transmitting the subscription confirmation
 ActivityChannel is streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:07:48 +0530
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:07:48 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/" for ::1 at 2020-08-22 16:12:21 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.8ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 1852ms (Views: 1790.5ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 16:12:24 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:12:24 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs/new" for ::1 at 2020-08-22 16:12:28 +0530
+Processing by UploadCsvsController#new as HTML
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (689.6ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (743.3ms)
+Completed 200 OK in 973ms (Views: 967.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_csvs" for ::1 at 2020-08-22 16:12:35 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vKIkr4OJRIkwiidAKWfYse4NApYZTMsfuLcl+jFt8ojjK3dXP9XeVZpvoeitOsg+HJtbn23CNnlGD3GqKhUxw==", "commit"=>"Create Upload csv"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[35m (2.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (10.0ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 214ms (Views: 178.0ms | ActiveRecord: 3.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:12:36 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:12:36 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:12:36 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started POST "/upload_csvs" for ::1 at 2020-08-22 16:12:50 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tHboCF/YyjRorAIytfno5dDq6KO5QPpZ8/p7XCLu1qsYzK3iOVIO0kl7Md34/Mv4g8sD1Fv54AdIl9QVm8MDLw==", "upload_csv"=>{"users"=>["dsdsds@sample.com"], "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f6025cbdab8 @tempfile=#<Tempfile:/tmp/RackMultipart20200822-2494-165thbn.csv>, @original_filename="sample.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"upload_csv[csv_file]\"; filename=\"sample.csv\"\r\nContent-Type: text/csv\r\n">}, "commit"=>"Create Upload csv"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[36mUploadCsv Create (145.8ms)[0m  [1m[32mINSERT INTO "upload_csvs" ("users", "csv_file", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users", "[\"dsdsds@sample.com\"]"], ["csv_file", "sample.csv"], ["created_at", "2020-08-22 10:42:50.649948"], ["updated_at", "2020-08-22 10:42:50.649948"]]
+  ↳ app/controllers/upload_csvs_controller.rb:29
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: 7a881282-c3b7-4ecb-b41f-f35cb3134ec8) to Async(default) with arguments: #<GlobalID:0x00007f6025d540f8 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/31>>
+  [1m[35m (223.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+Redirected to http://localhost:3000/upload_csvs/31
+Completed 302 Found in 737ms (ActiveRecord: 369.8ms)
+
+
+  [1m[36mUploadCsv Load (3.8ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8] Performing GenrateCsvJob (Job ID: 7a881282-c3b7-4ecb-b41f-f35cb3134ec8) from Async(default) with arguments: #<GlobalID:0x00007f6025d76ea0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/31>>
+Started GET "/upload_csvs/31" for ::1 at 2020-08-22 16:12:51 +0530
+Processing by UploadCsvsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUploadCsv Load (1.9ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:67
+  Rendering upload_csvs/show.html.erb within layouts/application
+  Rendered upload_csvs/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 177ms (Views: 163.2ms | ActiveRecord: 1.9ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:12:51 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:12:51 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:12:51 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   [1m[36mUploadCsv Update (0.6ms)[0m  [1m[33mUPDATE "upload_csvs" SET "generated_csv" = $1, "updated_at" = $2 WHERE "upload_csvs"."id" = $3[0m  [["generated_csv", "/home/akash/Ajay/ShahnawazTestSO/public/product_data.csv"], ["updated_at", "2020-08-22 10:42:58.323557"], ["id", 31]]
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   Rendering user_mailer/send_csv.html.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   Rendered user_mailer/send_csv.html.erb within layouts/mailer (0.9ms)
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   Rendering user_mailer/send_csv.text.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8]   Rendered user_mailer/send_csv.text.erb within layouts/mailer (0.7ms)
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8] UserMailer#send_csv: processed outbound mail in 297.8ms
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8] Enqueued EventBroadcastJob (Job ID: 252acef2-6af5-4269-8c42-90c5c14c2f1a) to Async(default) at 2020-08-22 10:43:09 UTC with arguments: #<GlobalID:0x00007f6026139f60 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/31>>
+[ActiveJob] [GenrateCsvJob] [7a881282-c3b7-4ecb-b41f-f35cb3134ec8] Performed GenrateCsvJob (Job ID: 7a881282-c3b7-4ecb-b41f-f35cb3134ec8) from Async(default) in 13304.74ms
+  [1m[36mUploadCsv Load (1.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [EventBroadcastJob] [252acef2-6af5-4269-8c42-90c5c14c2f1a] Performing EventBroadcastJob (Job ID: 252acef2-6af5-4269-8c42-90c5c14c2f1a) from Async(default) with arguments: #<GlobalID:0x00007f6026163bd0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/31>>
+[ActiveJob] [EventBroadcastJob] [252acef2-6af5-4269-8c42-90c5c14c2f1a] [ActionCable] Broadcasting to activity_channel: {:message=>"Your csv is sent to the below users [\"dsdsds@sample.com\"]"}
+[ActiveJob] [EventBroadcastJob] [252acef2-6af5-4269-8c42-90c5c14c2f1a] Performed EventBroadcastJob (Job ID: 252acef2-6af5-4269-8c42-90c5c14c2f1a) from Async(default) in 1.23ms
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"dsdsds@sample.com\"]"} (via streamed from activity_channel)
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"dsdsds@sample.com\"]"} (via streamed from activity_channel)
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:14:00 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.6ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 467ms (Views: 407.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/upload_csvs/new" for ::1 at 2020-08-22 16:14:03 +0530
+Processing by UploadCsvsController#new as HTML
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (3.0ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 217ms (Views: 196.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_csvs" for ::1 at 2020-08-22 16:14:28 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lDlx9pNfpWsFwUeCFeHChKHSoSctEni/DCDElN8XiQ9FR1S5ca7XAHdq0Zi38LbGnhj4QwjAQ0qX2iXFn3pqAg==", "upload_csv"=>{"users"=>["ssaddsadsa@sample.com"], "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f60249a6448 @tempfile=#<Tempfile:/tmp/RackMultipart20200822-2494-y456e5.csv>, @original_filename="sample.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"upload_csv[csv_file]\"; filename=\"sample.csv\"\r\nContent-Type: text/csv\r\n">}, "commit"=>"Create Upload csv"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+  [1m[36mUploadCsv Create (3.5ms)[0m  [1m[32mINSERT INTO "upload_csvs" ("users", "csv_file", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users", "[\"ssaddsadsa@sample.com\"]"], ["csv_file", "sample.csv"], ["created_at", "2020-08-22 10:44:28.440670"], ["updated_at", "2020-08-22 10:44:28.440670"]]
+  ↳ app/controllers/upload_csvs_controller.rb:29
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: ed9de25e-d55c-44fc-bf56-c36e8efd3ad9) to Async(default) with arguments: #<GlobalID:0x00007f6024ac8268 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[36mUploadCsv Load (1.0ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (50.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/upload_csvs_controller.rb:29
+Redirected to http://localhost:3000/upload_csvs/32
+Completed 302 Found in 95ms (ActiveRecord: 55.2ms)
+
+
+Started GET "/upload_csvs/32" for ::1 at 2020-08-22 16:14:28 +0530
+Processing by UploadCsvsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUploadCsv Load (0.3ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:67
+  Rendering upload_csvs/show.html.erb within layouts/application
+  Rendered upload_csvs/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 184ms (Views: 158.7ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:14:28 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:14:28 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:14:28 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:15:05 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:9
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 162ms (Views: 111.0ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 16:15:13 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:13 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:15:14 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:14 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:15:27 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: f7139fbd-a1d2-463d-b8e5-11dc0e5be768) to Async(default) with arguments: #<GlobalID:0x00007f6020104758 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 170ms (Views: 118.9ms | ActiveRecord: 6.0ms)
+
+
+  [1m[36mUploadCsv Load (1.3ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768] Performing GenrateCsvJob (Job ID: f7139fbd-a1d2-463d-b8e5-11dc0e5be768) from Async(default) with arguments: #<GlobalID:0x00007f602609fd98 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   [1m[36mUploadCsv Update (0.7ms)[0m  [1m[33mUPDATE "upload_csvs" SET "generated_csv" = $1, "updated_at" = $2 WHERE "upload_csvs"."id" = $3[0m  [["generated_csv", "/home/akash/Ajay/ShahnawazTestSO/public/product_data.csv"], ["updated_at", "2020-08-22 10:45:27.765202"], ["id", 32]]
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   ↳ app/jobs/genrate_csv_job.rb:17
+Started GET "/cable" for ::1 at 2020-08-22 16:15:27 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:47 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for ::1 at 2020-08-22 16:15:47 +0530
+Started GET "/cable" for ::1 at 2020-08-22 16:15:47 +0530
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:47 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:47 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:15:47 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   Rendering user_mailer/send_csv.html.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   Rendered user_mailer/send_csv.html.erb within layouts/mailer (1.4ms)
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   Rendering user_mailer/send_csv.text.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768]   Rendered user_mailer/send_csv.text.erb within layouts/mailer (1.6ms)
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768] UserMailer#send_csv: processed outbound mail in 111.1ms
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768] Enqueued EventBroadcastJob (Job ID: e5a28dc9-978e-4a4b-8204-2d2a4bdb4028) to Async(default) at 2020-08-22 10:45:57 UTC with arguments: #<GlobalID:0x00007f602482cec8 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+ActivityChannel is transmitting the subscription confirmation
+[ActiveJob] [GenrateCsvJob] [f7139fbd-a1d2-463d-b8e5-11dc0e5be768] Performed GenrateCsvJob (Job ID: f7139fbd-a1d2-463d-b8e5-11dc0e5be768) from Async(default) in 24541.28ms
+ActivityChannel is streaming from activity_channel
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+  [1m[36mUploadCsv Load (1.1ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [EventBroadcastJob] [e5a28dc9-978e-4a4b-8204-2d2a4bdb4028] Performing EventBroadcastJob (Job ID: e5a28dc9-978e-4a4b-8204-2d2a4bdb4028) from Async(default) with arguments: #<GlobalID:0x00007f60248f0990 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [EventBroadcastJob] [e5a28dc9-978e-4a4b-8204-2d2a4bdb4028] [ActionCable] Broadcasting to activity_channel: {:message=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"}
+[ActiveJob] [EventBroadcastJob] [e5a28dc9-978e-4a4b-8204-2d2a4bdb4028] Performed EventBroadcastJob (Job ID: e5a28dc9-978e-4a4b-8204-2d2a4bdb4028) from Async(default) in 0.87ms
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"} (via streamed from activity_channel)
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"} (via streamed from activity_channel)
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:17:19 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: ae6ebfe7-6480-4312-963b-9e97a0f00c61) to Async(default) with arguments: #<GlobalID:0x00007f6025b6ca60 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 148ms (Views: 121.8ms | ActiveRecord: 6.1ms)
+
+
+  [1m[36mUploadCsv Load (1.0ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61] Performing GenrateCsvJob (Job ID: ae6ebfe7-6480-4312-963b-9e97a0f00c61) from Async(default) with arguments: #<GlobalID:0x00007f6025704a18 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   Rendering user_mailer/send_csv.html.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   Rendered user_mailer/send_csv.html.erb within layouts/mailer (0.5ms)
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   Rendering user_mailer/send_csv.text.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61]   Rendered user_mailer/send_csv.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61] UserMailer#send_csv: processed outbound mail in 17.8ms
+Started GET "/cable" for ::1 at 2020-08-22 16:17:20 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:17:25 +0530
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61] Enqueued EventBroadcastJob (Job ID: 84f14656-e973-4719-8bcf-be9d3aa4f725) to Async(default) at 2020-08-22 10:47:30 UTC with arguments: "Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+[ActiveJob] [GenrateCsvJob] [ae6ebfe7-6480-4312-963b-9e97a0f00c61] Performed GenrateCsvJob (Job ID: ae6ebfe7-6480-4312-963b-9e97a0f00c61) from Async(default) in 5010.7ms
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:17:26 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:17:26 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+[ActiveJob] [EventBroadcastJob] [84f14656-e973-4719-8bcf-be9d3aa4f725] Performing EventBroadcastJob (Job ID: 84f14656-e973-4719-8bcf-be9d3aa4f725) from Async(default) with arguments: "Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"
+[ActiveJob] [EventBroadcastJob] [84f14656-e973-4719-8bcf-be9d3aa4f725] [ActionCable] Broadcasting to activity_channel: {:message=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"}
+[ActiveJob] [EventBroadcastJob] [84f14656-e973-4719-8bcf-be9d3aa4f725] Performed EventBroadcastJob (Job ID: 84f14656-e973-4719-8bcf-be9d3aa4f725) from Async(default) in 0.29ms
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:17:38 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[36mUploadCsv Load (0.3ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: 8874ce48-1bd6-498c-9f65-d6d599bd183c) to Async(default) with arguments: #<GlobalID:0x00007f602cc82218 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  [1m[36mUploadCsv Load (1.0ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c] Performing GenrateCsvJob (Job ID: 8874ce48-1bd6-498c-9f65-d6d599bd183c) from Async(default) with arguments: #<GlobalID:0x00007f601809d7e0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.8ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/upload_csvs/index.html.erb:21
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   ↳ app/jobs/genrate_csv_job.rb:17
+  Rendered upload_csvs/index.html.erb within layouts/application (6.3ms)
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   ↳ app/jobs/genrate_csv_job.rb:17
+Completed 200 OK in 16458ms (Views: 16431.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 16:17:54 +0530
+Started GET "/cable" for ::1 at 2020-08-22 16:17:54 +0530
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   Rendering user_mailer/send_csv.html.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   Rendered user_mailer/send_csv.html.erb within layouts/mailer (0.7ms)
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   Rendering user_mailer/send_csv.text.erb within layouts/mailer
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c]   Rendered user_mailer/send_csv.text.erb within layouts/mailer (0.5ms)
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c] UserMailer#send_csv: processed outbound mail in 26.0ms
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c] Enqueued EventBroadcastJob (Job ID: fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7) to Async(default) at 2020-08-22 10:48:05 UTC with arguments: "Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"
+[ActiveJob] [GenrateCsvJob] [8874ce48-1bd6-498c-9f65-d6d599bd183c] Performed GenrateCsvJob (Job ID: 8874ce48-1bd6-498c-9f65-d6d599bd183c) from Async(default) in 21813.87ms
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for ::1 at 2020-08-22 16:18:00 +0530
+WebSocket error occurred: Broken pipe
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Started GET "/cable" for ::1 at 2020-08-22 16:18:00 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:00 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+[ActiveJob] [EventBroadcastJob] [fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7] Performing EventBroadcastJob (Job ID: fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7) from Async(default) with arguments: "Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"
+[ActiveJob] [EventBroadcastJob] [fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7] [ActionCable] Broadcasting to activity_channel: {:message=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"}
+[ActiveJob] [EventBroadcastJob] [fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7] Performed EventBroadcastJob (Job ID: fd42ec57-d7be-4c2c-81c6-fba8b9fd83f7) from Async(default) in 0.92ms
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"} (via streamed from activity_channel)
+ActivityChannel transmitting {"message"=>"Your csv is sent to the below users [\"ssaddsadsa@sample.com\"]"} (via streamed from activity_channel)
+Started GET "/upload_csvs" for ::1 at 2020-08-22 16:18:55 +0530
+Processing by UploadCsvsController#index as HTML
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: 7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3) to Async(default) with arguments: #<GlobalID:0x00007f6025d6e1d8 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 238ms (Views: 222.1ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3] Performing GenrateCsvJob (Job ID: 7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3) from Async(default) with arguments: #<GlobalID:0x00007f6025319ed0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3] Enqueued EventBroadcastJob (Job ID: 260ebf79-b4b4-4edc-bcd1-300f5e9732ed) to Async(default) at 2020-08-22 10:49:00 UTC with arguments: "Invalid csv please change attachment or try again."
+[ActiveJob] [GenrateCsvJob] [7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3] Performed GenrateCsvJob (Job ID: 7cc0a52a-f1b2-4b20-83c2-95bde87bcbc3) from Async(default) in 9.56ms
+Started GET "/cable" for ::1 at 2020-08-22 16:18:55 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:18:55 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+[ActiveJob] [EventBroadcastJob] [260ebf79-b4b4-4edc-bcd1-300f5e9732ed] Performing EventBroadcastJob (Job ID: 260ebf79-b4b4-4edc-bcd1-300f5e9732ed) from Async(default) with arguments: "Invalid csv please change attachment or try again."
+[ActiveJob] [EventBroadcastJob] [260ebf79-b4b4-4edc-bcd1-300f5e9732ed] [ActionCable] Broadcasting to activity_channel: {:message=>"Invalid csv please change attachment or try again."}
+[ActiveJob] [EventBroadcastJob] [260ebf79-b4b4-4edc-bcd1-300f5e9732ed] Performed EventBroadcastJob (Job ID: 260ebf79-b4b4-4edc-bcd1-300f5e9732ed) from Async(default) in 0.72ms
+ActivityChannel transmitting {"message"=>"Invalid csv please change attachment or try again."} (via streamed from activity_channel)
+Started GET "/cable" for ::1 at 2020-08-22 16:19:04 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:19:04 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:42:28 +0530
+  [1m[35m (32.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:42:31 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs?page=3" for ::1 at 2020-08-22 16:43:02 +0530
+Processing by UploadCsvsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUploadCsv Load (58.2ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: 5ca1ef13-35a3-4238-9567-649258994d29) to Async(default) with arguments: #<GlobalID:0x0000561f0406c808 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[35m (173.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (1.3ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (35.4ms)
+  [1m[36mUploadCsv Load (2.6ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29] Performing GenrateCsvJob (Job ID: 5ca1ef13-35a3-4238-9567-649258994d29) from Async(default) with arguments: #<GlobalID:0x00007f9428066b98 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29]   [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29]   ↳ app/jobs/genrate_csv_job.rb:17
+Completed 200 OK in 4993ms (Views: 3788.8ms | ActiveRecord: 508.2ms)
+
+
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29] Enqueued EventBroadcastJob (Job ID: 73cde125-69a3-4e81-9278-59cec44b5d9e) to Async(default) at 2020-08-22 11:13:12 UTC with arguments: "Invalid csv please change attachment or try again."
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:43:07 +0530
+[ActiveJob] [GenrateCsvJob] [5ca1ef13-35a3-4238-9567-649258994d29] Performed GenrateCsvJob (Job ID: 5ca1ef13-35a3-4238-9567-649258994d29) from Async(default) in 3416.42ms
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:43:07 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:43:07 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs?page=3" for ::1 at 2020-08-22 16:43:11 +0530
+Processing by UploadCsvsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: ee2e7ac0-2f98-471d-9956-b4e37f2e7274) to Async(default) with arguments: #<GlobalID:0x00007f9470c8bf20 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274] Performing GenrateCsvJob (Job ID: ee2e7ac0-2f98-471d-9956-b4e37f2e7274) from Async(default) with arguments: #<GlobalID:0x00007f94280c61d8 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/32>>
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274]   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274]   ↳ app/jobs/genrate_csv_job.rb:17
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274]   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274]   ↳ app/jobs/genrate_csv_job.rb:17
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274] Enqueued EventBroadcastJob (Job ID: ce87b680-35f4-4e6f-9c29-2091387f1d35) to Async(default) at 2020-08-22 11:13:16 UTC with arguments: "Invalid csv please change attachment or try again."
+[ActiveJob] [GenrateCsvJob] [ee2e7ac0-2f98-471d-9956-b4e37f2e7274] Performed GenrateCsvJob (Job ID: ee2e7ac0-2f98-471d-9956-b4e37f2e7274) from Async(default) in 7.56ms
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (0.3ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 170ms (Views: 134.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/cable" for ::1 at 2020-08-22 16:43:11 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:43:11 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+[ActiveJob] [EventBroadcastJob] [73cde125-69a3-4e81-9278-59cec44b5d9e] Performing EventBroadcastJob (Job ID: 73cde125-69a3-4e81-9278-59cec44b5d9e) from Async(default) with arguments: "Invalid csv please change attachment or try again."
+[ActiveJob] [EventBroadcastJob] [73cde125-69a3-4e81-9278-59cec44b5d9e] [ActionCable] Broadcasting to activity_channel: {:message=>"Invalid csv please change attachment or try again."}
+[ActiveJob] [EventBroadcastJob] [73cde125-69a3-4e81-9278-59cec44b5d9e] Performed EventBroadcastJob (Job ID: 73cde125-69a3-4e81-9278-59cec44b5d9e) from Async(default) in 1.28ms
+ActivityChannel transmitting {"message"=>"Invalid csv please change attachment or try again."} (via streamed from activity_channel)
+ActivityChannel transmitting {"message"=>"Invalid csv please change attachment or try again."} (via streamed from activity_channel)
+[ActiveJob] [EventBroadcastJob] [ce87b680-35f4-4e6f-9c29-2091387f1d35] Performing EventBroadcastJob (Job ID: ce87b680-35f4-4e6f-9c29-2091387f1d35) from Async(default) with arguments: "Invalid csv please change attachment or try again."
+[ActiveJob] [EventBroadcastJob] [ce87b680-35f4-4e6f-9c29-2091387f1d35] [ActionCable] Broadcasting to activity_channel: {:message=>"Invalid csv please change attachment or try again."}
+[ActiveJob] [EventBroadcastJob] [ce87b680-35f4-4e6f-9c29-2091387f1d35] Performed EventBroadcastJob (Job ID: ce87b680-35f4-4e6f-9c29-2091387f1d35) from Async(default) in 0.96ms
+ActivityChannel transmitting {"message"=>"Invalid csv please change attachment or try again."} (via streamed from activity_channel)
+ActivityChannel transmitting {"message"=>"Invalid csv please change attachment or try again."} (via streamed from activity_channel)
+Started GET "/upload_csvs/new" for ::1 at 2020-08-22 16:43:20 +0530
+Processing by UploadCsvsController#new as HTML
+  Rendering upload_csvs/new.html.erb within layouts/application
+  Rendered upload_csvs/_form.html.erb (1379.1ms)
+  Rendered upload_csvs/new.html.erb within layouts/application (1422.5ms)
+Completed 200 OK in 1736ms (Views: 1588.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_csvs" for ::1 at 2020-08-22 16:43:36 +0530
+Processing by UploadCsvsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vE4MUy8oxJRTuSsshFZZSd2m+ysqABh5itolvQEwxT7b7JD6A2oWusdF+KfkEJmYJVHuakEHv3KpN11+fOlziQ==", "upload_csv"=>{"users"=>["dasdsa@sample.com"], "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f9469660170 @tempfile=#<Tempfile:/tmp/RackMultipart20200822-8084-lcq5l0.csv>, @original_filename="sample_test.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"upload_csv[csv_file]\"; filename=\"sample_test.csv\"\r\nContent-Type: text/csv\r\n">}, "commit"=>"Create Upload csv"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/upload_csvs_controller.rb:31
+  [1m[36mUploadCsv Create (150.4ms)[0m  [1m[32mINSERT INTO "upload_csvs" ("users", "csv_file", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users", "[\"dasdsa@sample.com\"]"], ["csv_file", "sample_test.csv"], ["created_at", "2020-08-22 11:13:36.331797"], ["updated_at", "2020-08-22 11:13:36.331797"]]
+  ↳ app/controllers/upload_csvs_controller.rb:31
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: 75883986-56b4-46e3-b80d-12ac22b8d3de) to Async(default) with arguments: #<GlobalID:0x00007f94280a60e0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/33>>
+  [1m[36mUploadCsv Load (1.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (199.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/upload_csvs_controller.rb:31
+Redirected to http://localhost:3000/upload_csvs/33
+Completed 302 Found in 466ms (ActiveRecord: 351.2ms)
+
+
+Started GET "/upload_csvs/33" for ::1 at 2020-08-22 16:43:36 +0530
+Processing by UploadCsvsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUploadCsv Load (5.7ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:69
+  Rendering upload_csvs/show.html.erb within layouts/application
+  Rendered upload_csvs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 234ms (Views: 193.4ms | ActiveRecord: 5.7ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-08-22 16:43:36 +0530
+ActivityChannel stopped streaming from activity_channel
+Started GET "/cable" for ::1 at 2020-08-22 16:43:37 +0530
+Started GET "/cable/" [WebSocket] for ::1 at 2020-08-22 16:43:37 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ActivityChannel is transmitting the subscription confirmation
+ActivityChannel is streaming from activity_channel
+Started GET "/upload_csvs?page=3" for ::1 at 2020-08-22 16:44:42 +0530
+Processing by UploadCsvsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUploadCsv Load (0.5ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" ORDER BY "upload_csvs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/upload_csvs_controller.rb:9
+[ActiveJob] Enqueued GenrateCsvJob (Job ID: d5b9df7f-799f-4a43-904b-ae65f2fb5db3) to Async(default) with arguments: #<GlobalID:0x00007f946865c4e0 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/33>>
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "upload_csvs"[0m
+  ↳ app/controllers/upload_csvs_controller.rb:11
+  Rendering upload_csvs/index.html.erb within layouts/application
+  [1m[36mUploadCsv Load (5.8ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 10]]
+  ↳ app/views/upload_csvs/index.html.erb:21
+  Rendered upload_csvs/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 160ms (Views: 103.2ms | ActiveRecord: 20.2ms)
+
+
+  [1m[36mUploadCsv Load (0.4ms)[0m  [1m[34mSELECT  "upload_csvs".* FROM "upload_csvs" WHERE "upload_csvs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/akash/.rvm/gems/ruby-2.6.4/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [GenrateCsvJob] [d5b9df7f-799f-4a43-904b-ae65f2fb5db3] Performing GenrateCsvJob (Job ID: d5b9df7f-799f-4a43-904b-ae65f2fb5db3) from Async(default) with arguments: #<GlobalID:0x00007f946ada2608 @uri=#<URI::GID gid://shahnawaz-test/UploadCsv/33>>
+Started GET "/cable" for ::1 at 2020-08-22 16:44:47 +0530

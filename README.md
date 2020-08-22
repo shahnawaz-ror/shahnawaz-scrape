@@ -24,15 +24,14 @@ Things you may want to cover:
 ```
 $ rvm  rvm 2.6.4
 $ cd /path/to/repos
-$ git clone https://github.com/shahnawaz-ror/shahnawaz-posts
-$ cd shahnawaz-posts
+$ git clone https://github.com/shahnawaz-ror/shahnawaz-scrape
+$ cd shahnawaz-scrape
 $ bundle install
 $ rake db:create #if first time installing
 $ rake db:migrate #If there are changes in DB
 $ rails s #start the rails application
+$ redis-server #in another window
 
 ```
-
-If running application in production need to configure The cloudinary also
 
 * ...

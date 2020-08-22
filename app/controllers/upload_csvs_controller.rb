@@ -6,6 +6,8 @@ class UploadCsvsController < ApplicationController
   # GET /upload_csvs
   # GET /upload_csvs.json
   def index
+        GenrateCsvJob.perform_later(UploadCsv.last)
+
     @pagy, @upload_csvs = pagy(UploadCsv.all, page: params[:page], items: 5)
   end
 
