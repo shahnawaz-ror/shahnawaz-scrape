@@ -3,8 +3,6 @@ class UploadCsv < ApplicationRecord
   validates :users, presence: true
   mount_uploader :csv_file, AvatarUploader
   after_create :processed_csv, on: :create
-  after_create_commit { EventBroadcastJob.perform_now self }
-
   def processed_csv
     GenrateCsvJob.perform_later(self)
   end
